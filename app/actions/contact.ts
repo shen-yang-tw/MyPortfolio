@@ -158,6 +158,12 @@ export async function submitContactForm(
   });
 
   if (dbError) {
+    console.error('Supabase contact message insert failed:', {
+      code: dbError.code,
+      message: dbError.message,
+      details: dbError.details,
+      hint: dbError.hint,
+    });
     return {
       success: false,
       message: '系統發生錯誤，請稍後再試或直接發送電子郵件',
