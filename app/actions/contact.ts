@@ -136,7 +136,7 @@ export async function submitContactForm(
   const parsed = contactSchema.safeParse(raw);
 
   if (!parsed.success) {
-    const fieldErrors = parsed.error.flatten().fieldErrors;
+    const fieldErrors = z.flattenError(parsed.error).fieldErrors;
     return {
       success: false,
       message: '請修正表單中的錯誤',
