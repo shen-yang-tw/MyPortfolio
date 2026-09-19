@@ -12,7 +12,7 @@ const notoSansTC = Noto_Sans_TC({
   display: 'swap',
 });
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://shen-yang-portfolio.vercel.app'),
