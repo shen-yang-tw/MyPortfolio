@@ -24,7 +24,7 @@ const contactSchema = z.object({
   email: z
     .string()
     .min(1, '電子郵件為必填欄位')
-    .email('請輸入有效的電子郵件地址'),
+    .pipe(z.email({ error: '請輸入有效的電子郵件地址' })),
   phone: z
     .string()
     .max(20, '電話號碼不可超過 20 個字元')
@@ -62,6 +62,14 @@ export function ContactForm() {
       message: '',
     },
   });
+
+  const onInvalid = () => {
+    toast({
+      variant: 'destructive',
+      title: '請檢查表單內容',
+      description: '請修正標示的欄位後再送出。',
+    });
+  };
 
   // 【關鍵技術 8】：Debounced LocalStorage auto-draft — 監聽表單值變化，debounce 500ms 後寫入 LocalStorage
   const watchedValues = watch();
@@ -105,31 +113,33 @@ export function ContactForm() {
     formData.append('message', data.message);
 
     startTransition(async () => {
-      const result = await submitContactForm(state, formData);
-      setState(result);
+      try {
+        const result = await submitContactForm(state, formData);
+        setState(result);
 
-      if (result.success) {
-        toast({
-          title: '訊息已送出',
-          description: result.message,
-        });
-        reset();
-        localStorage.removeItem(DRAFT_KEY);
-        setHasDraft(false);
-      } else {
-        if (result.errors) {
+        if (result.success) {
           toast({
-            variant: 'destructive',
-            title: '提交失敗',
+            title: '訊息已送出',
             description: result.message,
           });
+          reset();
+          localStorage.removeItem(DRAFT_KEY);
+          setHasDraft(false);
         } else {
           toast({
             variant: 'destructive',
-            title: '系統錯誤',
+            title: result.errors ? '提交失敗' : '系統錯誤',
             description: result.message,
           });
         }
+      } catch {
+        const message = '送出失敗，請確認伺服器環境變數與網路連線。';
+        setState({ success: false, message });
+        toast({
+          variant: 'destructive',
+          title: '系統錯誤',
+          description: message,
+        });
       }
     });
   };
@@ -142,7 +152,7 @@ export function ContactForm() {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmit, onInvalid)}
       className="space-y-5 rounded-xl border border-border bg-card/50 p-6"
       // 【關鍵技術 9】：WCAG 2.2 AA Accessibility (a11y) — 表單提供完整 aria-label、錯誤訊息關聯與鍵盤導航支援
       aria-label="聯絡表單"

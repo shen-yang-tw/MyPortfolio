@@ -12,8 +12,8 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-[600px] rounded-full bg-primary/10 blur-3xl" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-150 rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute top-20 right-10 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
@@ -115,14 +115,14 @@ export function HeroSection() {
             className="relative flex justify-center lg:justify-end"
           >
             <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-primary/20 via-accent/20 to-primary/20 blur-2xl animate-glow-pulse" />
+              <div className="absolute -inset-4 rounded-full bg-linear-to-tr from-primary/20 via-accent/20 to-primary/20 blur-2xl animate-glow-pulse" />
               <div className="relative h-64 w-64 sm:h-80 sm:w-80 overflow-hidden rounded-full ring-4 ring-primary/30 shadow-2xl neon-glow">
                 <img
                   src="/JSface.jpg"
                   alt="楊軒羽 Shen Yang 頭像"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/10 via-transparent to-accent/10" />
+                <div className="absolute inset-0 rounded-full bg-linear-to-tr from-primary/10 via-transparent to-accent/10" />
               </div>
 
               <motion.div

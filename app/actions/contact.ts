@@ -1,4 +1,5 @@
 'use server';
+// 需要 'use server'是因為它的 submitContactForm 會被 contact-form.tsx 這個 Client Component 匯入並呼叫
 
 // 【關鍵技術 2】：React 19 Server Actions ('use server') — 使用 Server Action 在伺服器端執行資料變更，無需建立 API 端點，直接從前端元件呼叫
 
@@ -25,7 +26,7 @@ const contactSchema = z.object({
   email: z
     .string()
     .min(1, '電子郵件為必填欄位')
-    .email('請輸入有效的電子郵件地址'),
+    .pipe(z.email({ error: '請輸入有效的電子郵件地址' })),
   phone: z
     .string()
     .max(20, '電話號碼不可超過 20 個字元')
@@ -115,6 +116,16 @@ export async function submitContactForm(
   prevState: ContactState,
   formData: FormData
 ): Promise<ContactState> {
+  if (
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  ) {
+    return {
+      success: false,
+      message: '尚未設定 Supabase 環境變數，請聯絡網站管理員。',
+    };
+  }
+
   const raw = {
     name: (formData.get('name') as string)?.trim() ?? '',
     email: (formData.get('email') as string)?.trim() ?? '',

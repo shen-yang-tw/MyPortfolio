@@ -37,7 +37,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3 group" aria-label="回首頁">
-          <div className="relative h-10 w-10 overflow-hidden rounded-lg ring-2 ring-primary/30 transition-all group-hover:ring-primary/60 group-hover:shadow-[var(--neon-glow)]">
+          <div className="relative h-10 w-10 overflow-hidden rounded-lg ring-2 ring-primary/30 transition-all group-hover:ring-primary/60 group-hover:shadow-(--neon-glow)">
             <img
               src="/JSface.jpg"
               alt="楊軒羽 logo"

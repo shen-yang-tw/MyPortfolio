@@ -15,10 +15,15 @@ const notoSansTC = Noto_Sans_TC({
 // export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://shen-yang-portfolio.vercel.app'),
+  metadataBase: new URL('https://myportfolio-amber-six-18.vercel.app/'),
   title: '楊軒羽 | Senior Full-Stack Engineer Portfolio',
   description:
     '楊軒羽 (Shen Yang) — 高級前端 / 全端工程師。專注於高效能、全端架構與現代化 Web 開發。React、Next.js、TypeScript、Supabase。',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/JSface.jpg',
+  },
   keywords: [
     '楊軒羽',
     'Shen Yang',
