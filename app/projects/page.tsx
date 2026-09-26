@@ -144,7 +144,7 @@ export default async function ProjectsPage() {
               專案<span className="text-gradient-primary">作品</span>
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground">
-              透過 GitHub REST API 即時拉取專案資料，使用 ISR 每小時自動更新。
+              透過 GitHub REST API 即時拉取專案資料，使用 GitHub 狀態即時更新（On-Demand Revalidation），以及 ISR 每小時自動更新一次。
               點擊卡片前往原始碼。
             </p>
           </div>
