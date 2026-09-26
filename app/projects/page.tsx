@@ -109,7 +109,8 @@ const mockRepos: Repo[] = [
 
 async function fetchRepos(): Promise<Repo[]> {
   try {
-    const res = await fetch('https://api.github.com/users/octocat/repos?sort=updated&per_page=8', {
+    const res = await fetch('https://api.github.com/users/shen-yang-tw/repos?sort=updated&per_page=6', { // ?sort=updated&per_page=6：「請把我帳號下『最近有更新過』的專案挑出來，而且依「最後更新時間」排序前『 6 個』就好，其餘的不用送過來。」
+
       // 【關鍵技術 5】：ISR revalidate: 3600 — 每小時重新生成一次，平衡資料新鮮度與靜態效能
       next: { revalidate: 3600 },
     });
