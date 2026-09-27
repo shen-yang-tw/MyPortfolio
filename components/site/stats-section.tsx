@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const stats = [
-  { value: 5, suffix: '+', label: '年開發經驗' },
-  { value: 30, suffix: '+', label: '專案交付' },
-  { value: 15, suffix: '+', label: '技術棧' },
-  { value: 99, suffix: '%', label: '客戶滿意度' },
+  { value: 15, suffix: '+', label: <>大型專案重構經驗 <div className="text-xs font-normal text-gray-500 mt-1">Enterprise Projects</div></> },
+  { value: 50, suffix: '+', label: <>數位轉型合作機構 <div className="text-xs font-normal text-gray-500 mt-1">Client Partners</div></> },
+  { value: 30, suffix: '+', label: <>核心技術與工具鏈 <div className="text-xs font-normal text-gray-500 mt-1">Tech Stacks</div></> },
+  { value: 99, suffix: '%', label: <>無障礙與效能合規 <div className="text-xs font-normal text-gray-500 mt-1">Accessibility & Performance</div></> },
 ];
 
 function CountUp({ end, suffix }: { end: number; suffix: string }) {
@@ -45,7 +45,7 @@ export function StatsSection() {
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <motion.div
-              key={stat.label}
+              key={stat.value}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

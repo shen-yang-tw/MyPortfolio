@@ -1,6 +1,6 @@
 // 【關鍵技術 1】：Next.js 16+ (App Router & RSC) — 使用 React Server Component 渲染首頁，實現 0 KB JavaScript 初始載入，提升 SEO 與首屏效能
 
-import { Phone, Mail, ArrowRight, Code2, Zap, Layers, Database, Globe, Sparkles } from 'lucide-react';
+import { Cpu, AppWindow, CheckCircle, Phone, Mail, ArrowRight, Code2, Zap, Layers, Database, Globe, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -21,20 +21,20 @@ const techStack = [
 
 const highlights = [
   {
-    icon: Zap,
-    title: '高效能渲染',
-    description: 'React Server Components 與 ISR 策略，實現極致首屏載入速度',
+    title: "AI 工具整合",
+    description: "善用 Python 與 ChatGPT API 等智慧工具鏈，把 AI 大腦直接裝進網頁中，用自動化流程幫專案大幅省下繁瑣的人工作業時間。",
+    icon: Cpu,
+  },
+    {
+    title: "高效全端架構",
+    description: "熟練運用最新 Next.js 16 與 React 19 架構，以及Server Actions + Serverless Database技術，並利用網頁動態讀取與效能優化技術，打造出載入速度極快、操作流暢的網站。",
+    icon: AppWindow,
   },
   {
-    icon: Layers,
-    title: '全端架構',
-    description: 'Server Actions + Serverless Database，端到端型別安全',
-  },
-  {
+    title: "現代化 Web 開發",
+    description: "擁有將近十年的精準切版底子，精通 Tailwind v4 、shadcn/ui、Framer Motion 與 RWD 響應式佈局，並能嚴格確保網站百分之百通過國家級無障礙規範檢測。",
     icon: Globe,
-    title: '現代化 Web',
-    description: 'Tailwind v4 CSS-First、Framer Motion 微互動、WCAG 2.2 AA',
-  },
+  }
 ];
 
 export default function HomePage() {

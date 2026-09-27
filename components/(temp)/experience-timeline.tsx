@@ -6,30 +6,39 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 const experiences = [
   {
     type: 'work',
-    role: <>AI 應用工程師 <div>(AI Application & Full-Stack Engineer)</div></>,
-    company: '獨立接案 / 個人技術工作室',
-    period: '2026 — Present',
+    role: 'Senior Frontend Engineer',
+    company: 'Tech Corp',
+    period: '2023 — Present',
     description:
-      '專注於將 Python 程式與生成式 AI 工具整合進網頁開發。透過串接大語言模型（LLM）API 來實現智慧型資料處理，並從無到有獨立規劃並開發兩個核心專案：包含網頁自動重構與改版系統、以及自動化資料搜集系統。全面追求利用現代化科技省下繁瑣的人工扣資料時間，落實高效且免加班的開發模式。',
-    tags: ["Next.js 16", "React 19", "Tailwind v4", "TypeScript", "GitHub API 串接", "ISR 渲染策略", "Python 程式設計", "AI 網頁自動重構", "自動化資料搜集"],
+      '主導前端架構升級至 Next.js 16 + React 19 Server Components，首屏載入效能提升 60%。建立設計系統與元件庫，提升團隊開發效率。',
+    tags: ['Next.js 16', 'React 19', 'RSC', 'Tailwind v4'],
   },
   {
     type: 'work',
-    role: <>資深前端工程師 <div>(Senior Front-end Layout Engineer)</div></>,
-    company: '中大型資訊開發公司（服務近 10 年，員工約 90 人）',
-    period: '2017 — 2026',
+    role: 'Full-Stack Engineer',
+    company: 'Startup Studio',
+    period: '2021 — 2023',
     description:
-      '於同一機構深耕服務近十年，展現極高之職業忠誠度與團隊信任。長期獨立主導大型系統與多項政府公部門專案之前端佈局（Layout）開發。精通 Bootstrap、Tailwind CSS 與 JavaScript 架構，完美在各種手機、平板與電腦上正常顯示。具備極強的自主為老舊專案導入新技術之實力，專注於高效常態工時交付，不需靠加班完成。',
-    tags: ["Tailwind css", "Bootstrap", "政府大型專案", "RWD 響應式網頁", "JavaScript", "前端架構設計", "獨立專案交付"],
+      '從零到一構建多個 SaaS 產品，使用 Supabase + PostgreSQL 作為後端，實現 Server Actions 端到端型別安全架構。',
+    tags: ['Supabase', 'Server Actions', 'TypeScript', 'PostgreSQL'],
   },
   {
     type: 'work',
-    role: <>資深網頁設計師  <div>(Senior UI Component & Design System Specialist)</div></>,
-    company: '早期經歷：多間數位行銷與廣告出版公司',
-    period: '1996 — 2017',
+    role: 'Frontend Developer',
+    company: 'Digital Agency',
+    period: '2019 — 2021',
     description:
-      '早期多年累積前端經驗，專門負責幫網站制定一套重複使用的網頁排版標準（Design System）。主要工作是把複雜的視覺畫面，變成乾淨、好懂又容易維護的網頁程式碼。這十年讓我學會怎麼自己一個人找出問題並解決，擁有很強的獨立作戰能力。',
-    tags: ["Design System", "CSS 核心架構", "網頁佈局標準", "UI/UX 易用性分析", "語意化 HTML", "獨立專案交付"],
+      '負責多個大型品牌網站開發，導入 Component-Driven 開發流程與自動化測試，程式覆蓋率提升至 85%。',
+    tags: ['React', 'Vue', 'Jest', 'Cypress'],
+  },
+  {
+    type: 'education',
+    role: 'B.S. Computer Science',
+    company: 'National University',
+    period: '2015 — 2019',
+    description:
+      '主修計算機科學，專注於 Web 技術、演算法與軟體工程。參與 ACM 競程競賽，獲得區域賽銀牌。',
+    tags: ['Algorithms', 'Data Structures', 'Web'],
   },
 ];
 
@@ -48,7 +57,7 @@ export function ExperienceTimeline() {
             經歷<span className="text-gradient-primary">時間軸</span>
           </h2>
           <p className="mt-3 text-muted-foreground">
-            15+ 年開發經驗，持續追求技術卓越
+            5+ 年全端開發經驗，持續追求技術卓越
           </p>
         </motion.div>
 

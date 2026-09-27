@@ -2,39 +2,27 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Code2, Database, Layers, Zap, Globe, GitBranch, Cloud, Terminal } from 'lucide-react';
+import { Cpu, AppWindow, CheckCircle, Settings } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: '前端框架',
-    icon: Code2,
-    skills: ['React 19', 'Next.js 16', 'Vue 3', 'TypeScript', 'JavaScript ES2024'],
+    title: "AI 應用與自動化",
+    description: "專注於利用大語言模型 API 建立自動化工具，提升工作效率並免除無效的傳統人工處理時間。",
+    icon: Cpu,
+    skills: ["Python 程式設計", "ChatGPT / LLM API 串接", "AI 提示詞工程", "網頁自動化爬蟲"]
   },
   {
-    title: '樣式與設計',
-    icon: Layers,
-    skills: ['Tailwind CSS v4', 'CSS Modules', 'Framer Motion', 'shadcn/ui', 'Responsive Design'],
+    title: "現代化全端技術",
+    description: "熟練運用當前最新、最高效能的前端架構，並嚴格確保系統通過國家級無障礙檢測，以及最新部署技術。",
+    icon: AppWindow,
+    skills: ["Next.js 16", "React 19", "TypeScript", "ISR 渲染策略", "Zod 資料欄位驗證", "Server Actions", "Vercel", "Supabase", "PostgreSQL", "RSC", "Tailwind v4", "shadcn/ui", "Framer Motion"]
   },
   {
-    title: '後端與資料庫',
-    icon: Database,
-    skills: ['Supabase', 'PostgreSQL', 'Server Actions', 'REST API', 'GraphQL'],
-  },
-  {
-    title: '效能與架構',
-    icon: Zap,
-    skills: ['RSC', 'ISR', 'Code Splitting', 'Bundle Optimization', 'Core Web Vitals'],
-  },
-  {
-    title: 'DevOps 與部署',
-    icon: Cloud,
-    skills: ['Vercel', 'Netlify', 'Docker', 'CI/CD', 'GitHub Actions'],
-  },
-  {
-    title: '工具與實踐',
-    icon: GitBranch,
-    skills: ['Git / GitHub', 'Zod Validation', 'React Hook Form', 'Vitest', 'Playwright'],
-  },
+    title: "工程協作工具",
+    description: "具備中大型資訊機構長期協作的工程規範，能高效維護高品質、好懂的網頁程式碼。",
+    icon: Settings,
+    skills: ["Git / GitHub 虛擬庫管理", "GitHub REST API 整合", "NPM 套件管理工具"]
+  }
 ];
 
 export function SkillsSection() {
@@ -68,11 +56,14 @@ export function SkillsSection() {
             >
               <Card className="group h-full border-border bg-card/50 transition-all hover:border-primary/30 hover:shadow-lg">
                 <CardContent className="p-6">
-                  <div className="mb-4 flex items-center gap-3">
+                  <div className="mb-4 flex flex-wrap items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all group-hover:scale-110 group-hover:bg-primary/20">
                       <category.icon className="h-5 w-5" />
                     </div>
-                    <h3 className="font-semibold">{category.title}</h3>
+                    <h3 className="font-semibold flex-1">{category.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+                      {category.description}
+                    </p>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
