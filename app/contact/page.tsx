@@ -82,8 +82,8 @@ export default function ContactPage() {
                   '前端架構',
                   '全端開發',
                   '技術諮詢',
-                  'Code Review',
-                  '團隊培訓',
+                  // 'Code Review',
+                  // '團隊培訓',
                   '效能優化',
                 ].map((item) => (
                   <span
