@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const stats = [
-  { value: 15, suffix: '+', label: <>大型專案重構經驗 <div className="text-xs font-normal text-gray-500 mt-1">Enterprise Projects</div></> },
-  { value: 50, suffix: '+', label: <>數位轉型合作機構 <div className="text-xs font-normal text-gray-500 mt-1">Client Partners</div></> },
-  { value: 30, suffix: '+', label: <>核心技術與工具鏈 <div className="text-xs font-normal text-gray-500 mt-1">Tech Stacks</div></> },
-  { value: 99, suffix: '%', label: <>無障礙與效能合規 <div className="text-xs font-normal text-gray-500 mt-1">Accessibility & Performance</div></> },
+  { value: 15, suffix: '+', label: <>大型專案重構經驗 <span className="block text-xs font-normal text-gray-500 mt-1">Enterprise Projects</span></> },
+  { value: 50, suffix: '+', label: <>數位轉型合作機構 <span className="block text-xs font-normal text-gray-500 mt-1">Client Partners</span></> },
+  { value: 30, suffix: '+', label: <>核心技術與工具鏈 <span className="block text-xs font-normal text-gray-500 mt-1">Tech Stacks</span></> },
+  { value: 99, suffix: '%', label: <>無障礙與效能合規 <span className="block text-xs font-normal text-gray-500 mt-1">Accessibility & Performance</span></> },
 ];
 
 function CountUp({ end, suffix }: { end: number; suffix: string }) {

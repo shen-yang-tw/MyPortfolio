@@ -25,11 +25,25 @@ const contactSchema = z.object({
     .string()
     .min(1, '電子郵件為必填欄位')
     .pipe(z.email({ error: '請輸入有效的電子郵件地址' })),
+  // phone: z
+  //   .string()
+  //   .max(20, '電話號碼不可超過 20 個字元')
+  //   .optional()
+  //   .or(z.literal('')),
   phone: z
     .string()
     .max(20, '電話號碼不可超過 20 個字元')
     .optional()
-    .or(z.literal('')),
+    .or(z.literal(''))
+    .refine((val) => {
+      // 因為電話是選填，如果使用者完全沒輸入（空字串），直接放行通過
+      if (!val) return true;
+      // 檢查是否符合台灣的手機（09xxxxxxxx）或常見市話格式
+      const taiwanPhoneRegex = /^(09\d{8}|0\d{1,2}-?\d{6,8})$/;
+      return taiwanPhoneRegex.test(val);
+    }, {
+      message: '請輸入有效的台灣手機或市話號碼', // 格式亂填時跳出的白話錯誤訊息
+    }),
   message: z
     .string()
     .min(10, '訊息至少需要 10 個字元')
@@ -174,7 +188,7 @@ export function ContactForm() {
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <Label htmlFor="name">
           姓名 <span className="text-destructive">*</span>
         </Label>
@@ -193,7 +207,7 @@ export function ContactForm() {
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <Label htmlFor="email">
           電子郵件 <span className="text-destructive">*</span>
         </Label>
@@ -213,7 +227,7 @@ export function ContactForm() {
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <Label htmlFor="phone">電話 (選填)</Label>
         <Input
           id="phone"
@@ -231,7 +245,7 @@ export function ContactForm() {
         )}
       </div>
 
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <Label htmlFor="message">
           訊息 <span className="text-destructive">*</span>
         </Label>
