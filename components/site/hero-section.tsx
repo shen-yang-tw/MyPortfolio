@@ -67,7 +67,7 @@ export function HeroSection() {
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="flex flex-wrap gap-2"
               >
-                {['Python', 'GitHub API', 'AI Web Refactoring', 'Automated Data Scraping', 'React 19', 'Next.js 16', 'TypeScript', 'ISR', 'Vercel', 'Supabase', 'Tailwind v4', 'ShadCN UI', 'Framer Motion', 'Web Accessibility (a11y)'].map(
+                {['Python', 'GitHub API', 'AI Web Refactoring', 'Automated Data Scraping', 'React 19', 'Next.js 16', 'TypeScript', 'ISR', 'Supabase', 'Tailwind v4', 'ShadCN UI', 'Framer Motion', 'Web Accessibility (a11y)'].map(
                   (tech) => (
                     <Badge key={tech} variant="outline" className="py-1.5">
                       {tech}
