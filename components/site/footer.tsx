@@ -74,22 +74,13 @@ export function Footer() {
             </div>
             <div className="flex gap-3 pt-1">
               <a
-                href="https://github.com/octocat"
+                href="https://github.com/shen-yang-tw"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
               >
                 <GitBranch className="h-4 w-4" />
-              </a>
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
-              >
-                <Globe className="h-4 w-4" />
               </a>
               <a
                 href="/projects"
