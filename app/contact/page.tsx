@@ -79,12 +79,16 @@ export default function ContactPage() {
               <h2 className="mb-3 font-semibold">合作類型</h2>
               <div className="flex flex-wrap gap-2">
                 {[
-                  '前端架構',
-                  '全端開發',
-                  '技術諮詢',
+                  // '前端架構',
+                  // '全端開發',
+                  // '技術諮詢',
                   // 'Code Review',
                   // '團隊培訓',
-                  '效能優化',
+                  // '效能優化',
+                  '全職工作機會 (Full-time Roles) ',
+                  '技術專案合作 (Project Collaboration)',
+                  '企業技術顧問 (Technical Consulting) ',
+                  '網頁效能優化 (Performance Optimization)',
                 ].map((item) => (
                   <span
                     key={item}
