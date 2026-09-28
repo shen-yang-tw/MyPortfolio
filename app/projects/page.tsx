@@ -144,6 +144,9 @@ export default async function ProjectsPage() {
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
               專案<span className="text-gradient-primary">作品</span>
             </h1>
+            <small className="max-w-2xl text-muted-foreground">
+              過去專案因保密協定無法公開展示，因此本網站主要展示個人專案與技術實作。
+            </small>
             <p className="max-w-2xl text-lg text-muted-foreground">
               透過 GitHub REST API 即時拉取專案資料，使用 GitHub 狀態即時更新（On-Demand Revalidation），以及 ISR 每小時自動更新一次。
               點擊卡片前往原始碼。

@@ -34,7 +34,7 @@ export function HeroSection() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
                 </span>
-                Available for opportunities
+                AI / LLM · Python · React · Next.js · TypeScript · Automation
               </Badge>
             </motion.div>
 
@@ -49,6 +49,9 @@ export function HeroSection() {
                 <span className="text-gradient-primary animate-gradient-shift">
                   楊軒羽
                 </span>
+                {/* <span className="block text-gradient-primary animate-gradient-shift">
+                  AI Application Engineer
+                </span> */}
               </motion.h1>
 
               <motion.p
@@ -57,7 +60,7 @@ export function HeroSection() {
                 transition={{ delay: 0.35, duration: 0.6 }}
                 className="text-lg text-muted-foreground sm:text-xl"
               >
-                專注於高效能、全端架構與現代化 Web 開發的{' '}
+                15+ 年開發經驗，核心能力是將 AI + Web + Automation 整合成實際可使用的 Application的{' '}
                 <span className="font-semibold text-foreground">Senior 工程師</span>
               </motion.p>
 
@@ -67,7 +70,10 @@ export function HeroSection() {
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="flex flex-wrap gap-2"
               >
-                {['Python', 'GitHub API', 'AI Web Refactoring', 'Automated Data Scraping', 'React 19', 'Next.js 16', 'TypeScript', 'ISR', 'Supabase', 'Tailwind v4', 'ShadCN UI', 'Framer Motion', 'Web Accessibility (a11y)'].map(
+                <span className="rounded-md border border-border bg-muted/50 px-2.5 py-1 text-xs font-medium text-muted-foreground transition-colors hover:border-primary/30 hover:text-foreground">
+                Core Skills</span>
+                {/* ['Python', 'GitHub API', 'AI Web Refactoring', 'Automated Data Scraping', 'React 19', 'Next.js 16', 'TypeScript', 'ISR', 'Supabase', 'Tailwind v4', 'ShadCN UI', 'Framer Motion', 'Web Accessibility (a11y)'] */}
+                {['AI / LLM · Python · React · Next.js · TypeScript · Automation'].map(
                   (tech) => (
                     <Badge key={tech} variant="outline" className="py-1.5">
                       {tech}
@@ -150,8 +156,8 @@ export function HeroSection() {
                   <span className="text-sm font-bold">FT</span>
                 </div>
                 <div className="text-left">
-                  <p className="text-xs font-semibold">Full-Stack</p>
-                  <p className="text-[10px] text-muted-foreground">End-to-end</p>
+                  <p className="text-xs font-semibold">AI Application</p>
+                  <p className="text-[10px] text-muted-foreground">Front-to-End Development</p>
                 </div>
               </motion.div>
             </div>

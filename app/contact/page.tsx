@@ -17,8 +17,11 @@ export default function ContactPage() {
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
               聯絡<span className="text-gradient-primary">楊軒羽</span>
             </h1>
+            <p className="max-w-2xl text-lg text-foreground">
+              Let's Build AI Applications.
+            </p>
             <p className="max-w-2xl text-lg text-muted-foreground">
-              有合作機會、技術諮詢或任何問題？歡迎透過下方表單或直接聯絡。
+              15+ 年開發經驗，專注於 AI / LLM、Python、React / Next.js 與 Automation。
             </p>
           </div>
         </div>
@@ -76,7 +79,7 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-xl border border-border bg-card/50 p-6">
-              <h2 className="mb-3 font-semibold">合作類型</h2>
+              <h2 className="mb-3 font-semibold">目標類型</h2>
               <div className="flex flex-wrap gap-2">
                 {[
                   // '前端架構',
@@ -85,10 +88,14 @@ export default function ContactPage() {
                   // 'Code Review',
                   // '團隊培訓',
                   // '效能優化',
-                  '全職工作機會 (Full-time Roles) ',
-                  '技術專案合作 (Project Collaboration)',
-                  '企業技術顧問 (Technical Consulting) ',
-                  '網頁效能優化 (Performance Optimization)',
+                  // '全職工作機會 (Full-time Roles) ',
+                  // '技術專案合作 (Project Collaboration)',
+                  // '企業技術顧問 (Technical Consulting) ',
+                  // '網頁效能優化 (Performance Optimization)',
+                  'AI Application Engineer',
+                  'AI Engineer',
+                  'AI Integration Engineer',
+                  'AI Software Engineer',
                 ].map((item) => (
                   <span
                     key={item}

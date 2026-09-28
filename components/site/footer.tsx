@@ -20,13 +20,12 @@ export function Footer() {
               <div>
                 <p className="font-bold">楊軒羽 Shen Yang</p>
                 <p className="text-xs text-muted-foreground">
-                  Senior Frontend / Full-Stack Engineer
+                  Senior Full-Stack + AI Engineer
                 </p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
-              專注於高效能、全端架構與現代化 Web 開發。使用 React、Next.js、
-              TypeScript 與 Supabase 打造生產級應用。
+              專注於 AI + Web + Automation 整合的 Senior 工程師
             </p>
           </div>
 
