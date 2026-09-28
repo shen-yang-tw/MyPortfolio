@@ -136,7 +136,7 @@ export function HeroSection() {
                 </div>
                 <div className="text-left">
                   <p className="text-xs font-semibold">Senior Engineer</p>
-                  <p className="text-[10px] text-muted-foreground">5+ years experience</p>
+                  <p className="text-[10px] text-muted-foreground">15+ years experience</p>
                 </div>
               </motion.div>
 
