@@ -9,7 +9,7 @@ import { Cpu, AppWindow, CheckCircle, Settings } from 'lucide-react';
 //     title: "AI 應用與自動化",
 //     description: "專注於利用大語言模型 API 建立自動化工具，提升工作效率並免除無效的傳統人工處理時間。",
 //     icon: Cpu,
-//     skills: ["Python 程式設計", "ChatGPT / LLM API 串接", "AI 提示詞工程", "網頁自動化爬蟲"]
+//     skills: ["Python 程式設計", "AI / LLM API 串接", "AI 提示詞工程", "網頁自動化爬蟲"]
 //   },
 //   {
 //     title: "現代化Web技術",
@@ -30,7 +30,7 @@ const skillCategories = [
     title: "AI 應用與自動化",
     description: "專注於利用大語言模型 API 建立自動化工具，提升工作效率並免除無效的傳統人工處理時間。",
     icon: Cpu,
-    skills: ["Python 程式設計", "ChatGPT / LLM API 串接", "AI 提示詞工程", "網頁自動化爬蟲"]
+    skills: ["Python 程式設計", "AI / LLM API 串接", "AI 提示詞工程", "網頁自動化爬蟲"]
   },
   {
     title: "現代化全端技術",

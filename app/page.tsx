@@ -22,7 +22,7 @@ const techStack = [
 const highlights = [
   {
     title: "AI 工具整合",
-    description: "善用 Python 與 ChatGPT API 等智慧工具鏈，把 AI 大腦直接裝進網頁中，用自動化流程幫專案大幅省下繁瑣的人工作業時間。",
+    description: "善用 Python 與 AI API 等智慧工具鏈，把 AI 大腦直接裝進網頁中，用自動化流程幫專案大幅省下繁瑣的人工作業時間。",
     icon: Cpu,
   },
     {

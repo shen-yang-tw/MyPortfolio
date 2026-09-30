@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Noto_Sans_TC } from 'next/font/google';
 import './globals.css';
@@ -16,9 +17,9 @@ const notoSansTC = Noto_Sans_TC({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://myportfolio-amber-six-18.vercel.app/'),
-  title: '楊軒羽 | Senior Full-Stack Engineer Portfolio',
+  title: '楊軒羽 | Senior AI & Full-Stack Engineer Portfolio',
   description:
-    '楊軒羽 (Shen Yang) — 高級前端 / 全端工程師。專注於高效能、全端架構與現代化 Web 開發。React、Next.js、TypeScript、Supabase。',
+    '楊軒羽 (Shen Yang) — 高級 AI & 全端工程師。專注於自動化、高效能、全端架構與現代化 Web 開發。AI / LLM · Python · React · Next.js · TypeScript · Automation · Supabase。',
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
@@ -27,8 +28,7 @@ export const metadata: Metadata = {
   keywords: [
     '楊軒羽',
     'Shen Yang',
-    'Senior Frontend Engineer',
-    'Full-Stack Engineer',
+    'Senior AI & Full-Stack Engineer',
     'React',
     'Next.js',
     'TypeScript',
@@ -75,6 +75,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
