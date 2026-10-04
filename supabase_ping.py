@@ -41,15 +41,19 @@ def send_supabase_ping():
     except Exception as e:
         print(f"[系統錯誤] 執行清理舊資料時連線失敗: {str(e)}")
 
-
     # ========================================================
     # 步驟 B：寫入當下最新的一筆系統 Ping 資料，強制刷存在感！
     # ========================================================
-    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # 修正：引入 timedelta，強制將伺服器的 UTC+0 時間加上 8 小時，轉為台灣時間！
+    from datetime import timedelta
+    
+    taiwan_time = datetime.utcnow() + timedelta(hours=8)
+    current_time = taiwan_time.strftime("%Y-%m-%d %H:%M:%S")
+    
     payload = {
         "name": "System_Auto_Ping",
         "email": "system@portfolio.internal",
-        "message": f"此為自動發送的資料庫防休眠啟用活動。最新發送時間：{current_time}"
+        "message": f"此為自動發送的資料庫防休眠啟用活動。最新發送時間（台灣時間）：{current_time}"
     }
     
     try:
