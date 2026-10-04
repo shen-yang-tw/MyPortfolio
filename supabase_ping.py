@@ -26,15 +26,14 @@ def send_supabase_ping():
     # ========================================================
     # 步驟 A：先清除舊的系統 Ping 留言，確保永遠不佔用空間！
     # ========================================================
-    # 透過網址加上參數 ?name=eq.System_Auto_Ping 來指定只刪除系統留言
     delete_url = f"{api_url}?name=eq.System_Auto_Ping"
     
     try:
         print("[開始] 正在清理資料庫中的舊系統紀錄...")
         delete_response = requests.delete(delete_url, headers=headers)
         
-        # 狀態碼 204 或 200 代表刪除成功
-        if delete_response.status_code in:
+        # 💡 狀態碼是 200 或 204，代表刪除成功，200代表已完成任務，204代表資料已刪除且沒有任何資料回傳
+        if delete_response.status_code in (200, 204):
             print("[清理成功] 舊的系統 Ping 資料已全數移除。")
         else:
             print(f"[提示] 未能完全清除舊資料（可能原本就沒資料），狀態碼: {delete_response.status_code}")
@@ -57,8 +56,8 @@ def send_supabase_ping():
         print("[開始] 正在寫入最新的系統 Ping 資料...")
         response = requests.post(api_url, headers=headers, data=json.dumps(payload))
         
-        # 狀態碼 201 代表建立成功
-        if response.status_code in:
+        # 💡 狀態碼是 200 或 201，代表寫入成功，200代表已完成任務，201代表已創建新資源
+        if response.status_code in (200, 201):
             print(f"[寫入成功] 成功刺激資料庫活動！最新時間：{current_time}")
         else:
             print(f"[警告] 寫入未成功，狀態碼: {response.status_code}, 回傳內容: {response.text}")
