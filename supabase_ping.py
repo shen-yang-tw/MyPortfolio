@@ -1,7 +1,8 @@
 import os
 import requests
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
+
 
 def send_supabase_ping():
     # 1. 從環境變數中讀取 Supabase 連線資訊
@@ -44,19 +45,16 @@ def send_supabase_ping():
     # ========================================================
     # 步驟 B：寫入當下最新的一筆系統 Ping 資料，強制刷存在感！
     # ========================================================
-    # ⚡ 核心修正：計算標準台灣時間 (UTC+8)
+    # 修正：引入 timedelta，強制將伺服器的 UTC+0 時間加上 8 小時，轉為台灣時間！
+    from datetime import timedelta
+    
     taiwan_time = datetime.utcnow() + timedelta(hours=8)
     current_time = taiwan_time.strftime("%Y-%m-%d %H:%M:%S")
-    
-    # ⚡ 核心修正：建立符合 Supabase ISO 8601 標準的台灣時區字串（尾端加上 +08:00）
-    supabase_timestamp = taiwan_time.strftime("%Y-%m-%dT%H:%M:%S+08:00")
     
     payload = {
         "name": "System_Auto_Ping",
         "email": "system@portfolio.internal",
-        "message": f"此為自動發送的資料庫防休眠啟用活動。最新發送時間：{current_time}",
-        # ⚠️ 強制覆蓋資料庫的自動生成時間，直接塞入帶有台灣時區的 timestamp！
-        "created_at": supabase_timestamp
+        "message": f"此為自動發送的資料庫防休眠啟用活動。最新發送時間（台灣時間）：{current_time}"
     }
     
     try:
@@ -65,7 +63,7 @@ def send_supabase_ping():
         
         # 💡 狀態碼是 200 或 201，代表寫入成功，200代表已完成任務，201代表已創建新資源
         if response.status_code in (200, 201):
-            print(f"[寫入成功] 成功刺激資料庫活動！最新時間：{current_time}")
+            print(f"[寫入成功] 成功刺激資料庫活動！最新台灣時間：{current_time}")
         else:
             print(f"[警告] 寫入未成功，狀態碼: {response.status_code}, 回傳內容: {response.text}")
             
